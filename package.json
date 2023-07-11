@@ -1,14 +1,17 @@
 {
-  "name": "duckduckgo",
+  "name": "torc-cypress-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run --headed",
+    "e2e:web": "npx cypress run --headed --spec cypress/e2e/web-ui.spec.cy.js",
+    "e2e:api": "npx cypress run --headed --spec cypress/e2e/api.spec.cy.js"
   },
-  "author": "",
+  "author": "willy de la cruz",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.1",
+    "cypress-mochawesome-reporter": "^3.5.1"
   }
 }
