@@ -7,7 +7,6 @@ describe('DuckDuckGo Search', () => {
             .should('have.value', 'The dev-friendly football API');
 
         cy.get('[aria-label="Search"]').click();
-        let found = false;
-        cy.get('[data-testid="result-title-a"]').filter('[href="https://www.football-data.org/index.php"]').eq(1);
+        cy.get('[data-testid="result-title-a"][href="https://www.football-data.org/index.php"]').should('exist');
     });
 });
