@@ -8,13 +8,6 @@ describe('DuckDuckGo Search', () => {
 
         cy.get('[aria-label="Search"]').click();
         let found = false;
-        cy.get('[data-testid=mainline] ol li').each((element) => {
-            if (element.find('[href="https://www.football-data.org/index.php"]')) {
-               found = true;
-            }
-            return found
-        }).then((found) => {
-            expect(found).to.be.true;
-        });
+        cy.get('[data-testid="result-title-a"]').filter('[href="https://www.football-data.org/index.php"]').eq(1);
     });
 });
